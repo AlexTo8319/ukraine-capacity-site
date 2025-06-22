@@ -1,0 +1,197 @@
+[
+  {
+    "questionId": "q3",
+    "condition": "score < 4",
+    "text": "Для поглиблення знань щодо законодавства просторового планування та взаємозв'язку планувальних документів рекомендуємо ознайомитися з наступним документом:",
+    "resources": [
+      { "title": "Просторове планування в Україні: профіль країни 2023 (11 сторінок, укр.)", "url": "https://zenodo.org/records/10600560" }
+    ]
+  },
+  {
+    "questionId": "q4",
+    "condition": "score < 4",
+    "text": "Для сприяння послідовному застосуванню законів та підзаконних актів з просторового планування слід інституціоналізувати регулярні, воркшопи з залученням різних зацікавлених сторін, спрямовані на колективне тлумачення, інтеграцію та активне використання актуальних нормативно-правових актів у повсякденних процесах прийняття рішень міської ради.",
+    "resources": []
+  },
+  {
+    "questionId": "q6",
+    "condition": "value && (value.includes('recovery') || value.includes('integrated'))",
+    "text": "Скоріше за все ваш наступний крок — це розробка Комплексного плану просторового розвитку (КППР).",
+    "resources": [
+      { "title": "Посібник для громад з розробки КППР", "url": "https://decentralization.gov.ua/uploads/library/file/817/%D0%9F%D0%BE%D1%81%D1%96%D0%B1%D0%BD%D0%B8%D0%BA_%D0%B4%D0%BB%D1%8F_%D0%B3%D1%80%D0%BE%D0%BC%D0%B0%D0%B4.pdf" }
+    ]
+  },
+  {
+    "questionId": "q6",
+    "condition": "value && value.includes('none')",
+    "text": "Якщо жоден з ключових документів не затверджений, рекомендуємо почати з розробки Програми Комплексного Відновлення.",
+    "resources": [
+      { "title": "Методика розробки Програми Комплексного Відновлення", "url": "https://decentralization.ua/uploads/library/file/895/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B0_%D0%9F%D0%9A%D0%92.pdf" },
+      { "title": "Посібник з Відновлення", "url": "https://kse.ua/wp-content/uploads/2024/01/Posibnik-iz-vidnovlennya.pdf" },
+      { "title": "Посібник з Розробки ПКВ (R2P)", "url": "https://r2p.org.ua/storage/page/3836/ba4baaf24f354befb551fc2f0041b50338c91ace.pdf" },
+      { "title": "Посібник для громад з розробки КППР", "url": "https://decentralization.gov.ua/uploads/library/file/817/%D0%9F%D0%BE%D1%81%D1%96%D0%B1%D0%BD%D0%B8%D0%BA_%D0%B4%D0%BB%D1%8F_%D0%B3%D1%80%D0%BE%D0%BC%D0%B0%D0%B4.pdf" },
+      { "title": "Приклад Концепції Інтегрованого Розвитку", "url": "https://mistosite.org.ua/uk/articles/dlia-sumskoi-hromady-rozrobliaiut-kontseptsiiu-intehrovanoho-rozvytku-shcho-tse-ta-navishcho" }
+    ]
+  },
+  {
+    "questionId": "q10",
+    "condition": "score < 4",
+    "text": "Короткі рекомендації для системного використання стратегічних документів:\n— Зібрати компактну міжвідомчу команду (освіта, дороги, екологія тощо).\n— Розкласти кожен розділ документів на факти / проблеми й занести у спільні нотатки.\n— Приміряти дані до реальних або запланованих проєктів, щоб побачити їхню користь.",
+    "resources": []
+  },
+  {
+    "questionId": "q11",
+    "condition": "score < 4",
+    "text": "Рекомендовані ресурси для забезпечення інклюзивності та гендерної чутливості у плануванні:",
+    "resources": [
+      { "title": "Гендерно чутливе відновлення та розвиток: 20 рекомендацій", "url": "https://cedos.org.ua/wp-content/uploads/genderno-chutlyve-vidnovlennya-i-rozvytok-na-misczevomu-rivni-20-rekomendaczij.pdf" },
+      { "title": "Посібник ООН-Хабітат для міст (ENG)", "url": "https://unhabitat.org/sites/default/files/2021/03/02032021_her_city_publication_low.pdf" }
+    ]
+  },
+  {
+    "questionId": "q13",
+    "condition": "score < 3",
+    "text": "Рекомендації для покращення доступності даних просторового планування:",
+    "resources": [
+      { "title": "Посібник з відкритих даних для громад", "url": "https://data.gov.ua/" },
+      { "title": "Стаття про публічний доступ до планувальних документів", "url": "https://decentralization.ua/news/18293" }
+    ]
+  },
+  {
+    "questionId": "q14",
+    "condition": "score < 4",
+    "text": "Для підвищення ефективності використання ГІС-технологій рекомендуємо наступний курс:",
+    "resources": [
+      { "title": "Онлайн-курс про управління громадою на основі даних", "url": "https://prometheus.org.ua/prometheus-free/mart-community-data-management/" }
+    ]
+  },
+  {
+    "questionId": "q15",
+    "condition": "score < 4",
+    "text": "Рекомендації щодо покращення якості та повноти картографічних даних:",
+    "resources": [
+      { "title": "Стаття: що таке картографічна основа для просторового планування", "url": "https://decentralization.ua/news/18293" }
+    ]
+  },
+  {
+    "questionId": "q16",
+    "condition": "value && value.includes('outdated')",
+    "text": "Для оновлення застарілих даних рекомендуємо:",
+    "resources": [
+      { "title": "Методика оновлення кадастрових даних", "url": "https://land.gov.ua/" },
+      { "title": "Посібник з цифровізації планувальних документів", "url": "https://decentralization.ua/news/18293" }
+    ]
+  },
+  {
+    "questionId": "q17",
+    "condition": "score > 3",
+    "text": "Для подолання фрагментації реєстрів рекомендуємо:",
+    "resources": [
+      { "title": "Методика інтеграції реєстрів нерухомості", "url": "https://land.gov.ua/" },
+      { "title": "Посібник з створення єдиної бази даних", "url": "https://decentralization.ua/news/18293" }
+    ]
+  },
+  {
+    "questionId": "q20",
+    "condition": "score < 4",
+    "text": "Як ефективніше використовувати дані про земельний податок для інформування рішень:\n1. Зробіть повну інвентаризацію та отримайте єдину базу всіх ділянок.\n2. Звірте податкові нарахування з кадастром — шукайте невраховані чи неправильно оформлені ділянки.\n3. Нанесіть дані у ГІС-систему та візуалізуйте: де вищі надходження, де земля простоює.\n4. Пріоритезуйте проєкти за картами: висока фіскальна віддача → дороги й інфраструктура; низька → пошук інвестора чи зміна призначення.\n5. Тримайте дані актуальними й відкритими — це підвищує довіру та допомагає залучати інвестиції.",
+    "resources": []
+  },
+  {
+    "sphereId": "stakeholder",
+    "condition": "avg_score < 3",
+    "resources": [
+      { "title": "Посібник \"Радимось з громадою. Організація консультацій з громадськістю в територіальній громаді\"", "url": "https://drive.google.com/file/d/1NiFmhjlkQ0JTfVm-koaUKGeZfuksxj8P/view" },
+      { "title": "Довідник із залучення громадськості до процесів містобудування в Україні", "url": "https://ro3kvit.com/ua/projects/participation-handbook-of-urban-planning" },
+      { "title": "Місцеві ініціативи та залучення громадськості до здійснення місцевого самоврядування. Навчальний посібник для посадових осіб місцевого самоврядування.", "url": "https://www.auc.org.ua/sites/default/files/library/6misiniweb.pdf" },
+      { "title": "Посібник «Як залучати мешкан_ок до прийняття рішень у громадах: огляд прикладів»", "url": "https://cedos.org.ua/researches/posibnyk-yak-zaluchaty-meshkan_ok-do-pryjnyattya-rishen-u-gromadah-oglyad-prykladiv/" },
+      { "title": "Посібник \"Виклики та можливості залучення на місцевому рівні під час війни\"", "url": "https://kse.ua/wp-content/uploads/2025/04/Ukrayinska_KSE-Institute-Ne-na-chasi.pdf" }
+    ]
+  },
+  {
+    "questionId": "q28",
+    "condition": "score < 3",
+    "resources": [
+        { "title": "Стаття \"Громада, дружня до бізнесу: як і для чого громадам працювати над проєктами з підтримки та розвитку підприємництва?\"", "url": "https://decentralization.ua/news/17577" },
+        { "title": "Стаття \"Партнерство і співпраця влади і бізнесу на місцевому рівні – запорука успішного розвитку громад\"", "url": "https://decentralization.ua/news/19082" }
+    ]
+  },
+  {
+    "questionId": "q29",
+    "condition": "score < 3",
+    "resources": [
+        { "title": "Діяльність донорських та міжнародних організацій в Україні у 2022-2024 роках", "url": "https://home.ednannia.ua/analytics/data-catalog/357" },
+        { "title": "Довідник організацій та незалежних експертів, що працюють в сфері просторового планування", "url": "https://ro3kvit.com/ua/projects/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3-%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D1%96%D0%B7%D0%B0%D1%86%D1%96%D0%B9-%D1%82%D0%B0-%D0%BD%D0%B5%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B8%D1%85-%D0%B5%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D1%82%D1%96%D0%B2-%D0%B2-%D0%B3%D0%B0%D0%BB%D1%83%D0%B7%D1%96-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BB%D0%B0%D0%BD%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F" }
+    ]
+  },
+  {
+    "sphereId": "technical",
+    "condition": "avg_score < 3",
+    "resources": [
+      { "title": "Онлайн-курс Prometheus про управління громадою на основі даних", "url": "https://prometheus.org.ua/prometheus-free/mart-community-data-management/" },
+      { "title": "Довідник \"GIS Handbook for Municipalities\" (ENG)", "url": "https://unhabitat.org/gis-handbook-for-municipalities" }
+    ]
+  },
+  {
+    "questionId": "q36",
+    "condition": "score < 3",
+    "resources": [
+      { "title": "Посібник \"Виклики та можливості залучення на місцевому рівні під час війни\"", "url": "https://kse.ua/wp-content/uploads/2025/04/Ukrayinska_KSE-Institute-Ne-na-chasi.pdf" }
+    ]
+  },
+  {
+    "questionId": "q37",
+    "condition": "score < 3",
+    "resources": [
+      { "title": "The New Urban Agenda Illustrated Handbook (ENG)", "url": "https://unhabitat.org/the-new-urban-agenda-illustrated" }
+    ]
+  },
+  {
+    "questionId": "q38",
+    "condition": "score < 3",
+    "resources": [
+      { "title": "Стаття \"Сценарії просторового розвитку\"", "url": "https://hromada.canactions.com/scenarii-prostorovogo-rozvytku/" }
+    ]
+  },
+  {
+    "questionId": "q39",
+    "condition": "score < 3",
+    "text": "Рекомендації для покращення системи професійної освіти:",
+    "resources": [
+      { "title": "Стандарти освіти в сфері містобудування", "url": "https://kse.ua/wp-content/uploads/2024/01/Posibnik-iz-vidnovlennya.pdf" },
+      { "title": "Програми підвищення кваліфікації для планувальників", "url": "https://prometheus.org.ua/prometheus-free/mart-community-data-management/" }
+    ]
+  },
+  {
+    "questionId": "q40",
+    "condition": "score < 3",
+    "text": "Для покращення знань про європейські практики рекомендуємо:",
+    "resources": [
+      { "title": "Європейські стандарти міського планування", "url": "https://unhabitat.org/" },
+      { "title": "Найкращі практики міського розвитку ЄС", "url": "https://ec.europa.eu/regional_policy/en/" }
+    ]
+  },
+  {
+    "questionId": "q41",
+    "condition": "score < 3",
+    "resources": [
+      { "title": "Посібник з Відновлення", "url": "https://kse.ua/wp-content/uploads/2024/01/Posibnik-iz-vidnovlennya.pdf" }
+    ]
+  },
+  {
+    "questionId": "q42",
+    "condition": "score < 3",
+    "resources": [
+      { "title": "Довідники про безпеку у громаді та адаптацію до невизначенностей, спричинених війною", "url": "https://imip.org.ua/%d0%b1%d1%96%d0%b1%d0%bb%d1%96%d0%be%d1%82%d0%b5%d0%ba%d0%b0/" },
+      { "title": "Відновлення міст. Безпека та захист в контексті міського планування та будівництва", "url": "https://drive.google.com/file/d/14HKb3yW4kqEkYLqmV_AV4alA29MCQRNq/view" }
+    ]
+  },
+  {
+    "questionId": "q43",
+    "condition": "score < 3",
+    "resources": [
+      { "title": "Посібник \"Зелене відновлення України: керівні принципи та інструменти для тих, хто ухвалює рішення\"", "url": "https://www.undp.org/sites/g/files/zskgke326/files/2024-04/undp-ua-green-recovery-ukr.pdf" },
+      { "title": "Посібник \"Досвід післявоєнного відновлення міст світу: уроки для України\"", "url": "https://era-ukraine.org.ua/wp-content/uploads/2023/06/Doslidzhennia_Dosvid-pisliavoiennoho-vidnovlennia-mist.pdf" }
+    ]
+  }
+] 

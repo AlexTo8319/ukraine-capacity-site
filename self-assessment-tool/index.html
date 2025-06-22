@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оцінка спроможності громади до просторового планування</title>
+    
+    <!-- Add Google Fonts that support Ukrainian characters -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Оцінка спроможності просторового планування</h1>
+            <p class="subtitle">Інструмент самооцінки для різних зацікавлених сторін громади</p>
+        </header>
+
+        <main>
+            <!-- Welcome Section -->
+            <section id="welcome-section" class="section active">
+                <h2>Ласкаво просимо!</h2>
+                <p>Цей інструмент допоможе вам оцінити спроможність вашої громади до просторового планування за 9 ключовими вимірами.</p>
+                
+                <div class="info-card">
+                    <h3>Як це працює:</h3>
+                    <ul>
+                        <li>Оберіть вашу роль у громаді</li>
+                        <li>Дайте відповіді на запитання за шкалою від 1 до 5</li>
+                        <li>Отримайте візуальний профіль спроможності громади</li>
+                        <li>Отримайте персоналізовані рекомендації</li>
+                    </ul>
+                </div>
+
+                <form id="initial-form">
+                    <div class="form-group">
+                        <label for="user-role">Ваша роль у громаді:</label>
+                        <select id="user-role" required>
+                            <option value="">Оберіть вашу роль</option>
+                            <option value="leadership">Керівництво громади</option>
+                            <option value="technical">Технічний спеціаліст</option>
+                            <option value="department">Представник іншого відділу громади, робота якого пов'язана з просторовим плануванням</option>
+                            <option value="cso">Представник громадської організації (ГО) / Неурядової організації (НУО)</option>
+                            <option value="resident">Мешканець громади</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hromada-name">Назва громади:</label>
+                        <input type="text" id="hromada-name" required 
+                               placeholder="Наприклад: Дніпровська громада">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="oblast">Область:</label>
+                        <input type="text" id="oblast" required 
+                               placeholder="Наприклад: Дніпропетровська область">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email (для отримання звіту):</label>
+                        <input type="email" id="email" 
+                               placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="actions">
+                        <button id="start-btn" class="btn btn-primary">Почати оцінювання</button>
+                        <button type="button" id="random-fill-btn" class="btn btn-secondary">Рандомний результат</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Assessment Section -->
+            <section id="assessment-section" class="section">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                    <span class="progress-text" id="progress-text">0%</span>
+                </div>
+
+                <form id="assessment-form">
+                    <!-- Questions will be dynamically inserted here -->
+                    <div id="questions-container"></div>
+                    
+                    <div class="navigation-buttons">
+                        <button type="button" id="prev-btn" class="btn btn-secondary" disabled>
+                            Назад
+                        </button>
+                        <button type="button" id="next-btn" class="btn btn-primary">
+                            Далі
+                        </button>
+                        <button type="submit" id="submit-btn" class="btn btn-success" style="display: none;">
+                            Завершити оцінювання
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="section">
+                <div class="chart-container" style="position:relative;height:400px;margin:0 0 30px 0;">
+                    <canvas id="radarChart"></canvas>
+                </div>
+                <div id="results-container">
+                    <!-- Results will be inserted here -->
+                </div>
+                <div class="actions actions-bottom">
+                    <button class="btn btn-primary" id="new-assessment-btn" onclick="location.reload()">Почати нове оцінювання</button>
+                    <button class="btn btn-secondary" id="download-pdf-btn">Завантажити результати в PDF</button>
+                </div>
+                <!-- Recommendations Modal -->
+                <div id="recommendation-modal" class="modal" style="display:none;">
+                    <div class="modal-content">
+                        <span class="close-modal" id="close-modal-btn">&times;</span>
+                        <h3 id="modal-sphere-title"></h3>
+                        <div id="modal-recommendation-text"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/assessment.js?v=1.1"></script>
+</body>
+</html>

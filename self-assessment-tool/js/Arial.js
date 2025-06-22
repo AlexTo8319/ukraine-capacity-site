@@ -1,0 +1,1 @@
+const assessment = new SpatialPlanningAssessment(); 

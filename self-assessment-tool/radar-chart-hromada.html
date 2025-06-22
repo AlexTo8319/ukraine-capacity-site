@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hromada Capacity Assessment Radar Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .chart-container {
+            position: relative;
+            height: 650px;
+            margin: 10px 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 22px;
+            font-family: Georgia, serif;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-family: Georgia, serif;
+        }
+        .benchmark-note {
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+            font-size: 14px;
+            font-family: Georgia, serif;
+        }
+        .excellence-note {
+            text-align: center;
+            color: #388e3c;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: Georgia, serif;
+        }
+        .info-note {
+            text-align: center;
+            color: #666;
+            margin-top: 10px;
+            font-size: 14px;
+            font-style: italic;
+            font-family: Georgia, serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spatial Planning Capacity Assessment for Chernivetska Hromada</h1>
+        <div class="subtitle">Chernivtsi Oblast • Community Resident</div>
+        
+        <div class="chart-container">
+            <canvas id="radarChart"></canvas>
+        </div>
+        
+        <div class="benchmark-note">
+            Benchmark: 2.5 per sphere (scores below are shown in red gradient, above in green gradient)
+        </div>
+        <div class="excellence-note">
+            ⭐ Excellent Performance: All spheres significantly above benchmark
+        </div>
+        <div class="info-note">
+            Note: Technical Expertise sphere is not assessed for residents. Spheres with no responses were excluded.
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            // Icons for each sphere
+            const sphereIcons = {
+                "Policy Understanding and Application": "📜",
+                "Strategic Vision and Planning": "🎯",
+                "Data and Information Management": "💾",
+                "Financial Resources": "💰",
+                "Stakeholder Engagement and Public Participation": "👥",
+                "Political Will and Leadership": "🏛️",
+                "Adaptability and Resilience": "🔄"
+            };
+
+            // Data for Chernivetska hromada - Community Resident (excluding 0 values)
+            const sphereData = {
+                "Policy Understanding and Application": 4.00,
+                "Strategic Vision and Planning": 4.50,
+                "Data and Information Management": 4.00,
+                "Financial Resources": 4.00,
+                "Stakeholder Engagement and Public Participation": 4.20,
+                "Political Will and Leadership": 3.67,
+                "Adaptability and Resilience": 4.67
+            };
+
+            // Create labels with icons
+            const labels = Object.keys(sphereData).map(sphere => 
+                sphereIcons[sphere] + " " + sphere
+            );
+            const values = Object.values(sphereData);
+            const benchmark = 2.5;
+
+            // Calculate colors for each point based on distance from benchmark
+            function getColorForValue(value) {
+                if (value < benchmark) {
+                    const ratio = (value - 1) / (benchmark - 1);
+                    const red = 255;
+                    const green = Math.round(100 + ratio * 155);
+                    const blue = Math.round(100 + ratio * 155);
+                    return `rgb(${red}, ${green}, ${blue})`;
+                } else {
+                    const ratio = (value - benchmark) / (5 - benchmark);
+                    const red = Math.round(255 - ratio * 155);
+                    const green = 200;
+                    const blue = Math.round(255 - ratio * 155);
+                    return `rgb(${red}, ${green}, ${blue})`;
+                }
+            }
+
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            const pointColors = values.map(v => getColorForValue(v));
+
+            const radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Current Assessment',
+                        data: values,
+                        borderColor: 'rgb(75, 192, 192)',
+                        backgroundColor: 'rgba(100, 150, 200, 0.1)',
+                        pointBackgroundColor: pointColors,
+                        pointBorderColor: pointColors,
+                        pointHoverBackgroundColor: pointColors,
+                        pointHoverBorderColor: pointColors,
+                        pointRadius: 6,
+                        pointHoverRadius: 8,
+                        borderWidth: 2,
+                        segment: {
+                            borderColor: function(ctx) {
+                                const p0DataIndex = ctx.p0DataIndex;
+                                const p1DataIndex = ctx.p1DataIndex;
+                                const p0Value = values[p0DataIndex];
+                                const p1Value = values[p1DataIndex];
+                                const avgValue = (p0Value + p1Value) / 2;
+                                return getColorForValue(avgValue);
+                            }
+                        }
+                    }, {
+                        label: 'Benchmark (2.5)',
+                        data: Array(labels.length).fill(benchmark),
+                        borderColor: 'rgba(128, 128, 128, 0.5)',
+                        backgroundColor: 'rgba(128, 128, 128, 0.05)',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        pointRadius: 0,
+                        pointHoverRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                font: {
+                                    size: 14,
+                                    family: 'Georgia'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.r.toFixed(2);
+                                }
+                            },
+                            titleFont: {
+                                family: 'Georgia'
+                            },
+                            bodyFont: {
+                                family: 'Georgia'
+                            }
+                        }
+                    },
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            min: 0,
+                            max: 5,
+                            ticks: {
+                                stepSize: 1,
+                                font: {
+                                    size: 12,
+                                    family: 'Georgia'
+                                }
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 12,
+                                    family: 'Georgia'
+                                },
+                                callback: function(value, index) {
+                                    const maxLength = 25;
+                                    if (value.length > maxLength) {
+                                        const iconEnd = value.indexOf(' ') + 1;
+                                        const icon = value.substring(0, iconEnd);
+                                        const text = value.substring(iconEnd);
+                                        
+                                        const words = text.split(' ');
+                                        const lines = [icon];
+                                        let currentLine = '';
+                                        
+                                        for (const word of words) {
+                                            if ((currentLine + word).length < maxLength) {
+                                                currentLine += (currentLine ? ' ' : '') + word;
+                                            } else {
+                                                if (currentLine) lines.push(currentLine);
+                                                currentLine = word;
+                                            }
+                                        }
+                                        if (currentLine) lines.push(currentLine);
+                                        
+                                        return lines;
+                                    }
+                                    return value;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
